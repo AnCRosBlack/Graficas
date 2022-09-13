@@ -3,11 +3,11 @@ require_once "php/conexion.php";
 $result;
 $device;
 
-$sql = 'SELECT * FROM DATOS ORDER BY id DESC LIMIT 1 ';
+$sql = 'SELECT * FROM DATOS1 ORDER BY id DESC LIMIT 1 ';
 $result = $conn->query($sql);
 $rows = $result->fetchAll();
 
-$sql2 = 'SELECT DISTINCT device,id FROM DATOS GROUP BY device desc ';
+$sql2 = 'SELECT DISTINCT device,id FROM DATOS1 GROUP BY device desc ';
 $result2 = $conn->query($sql2);
 $rows2 = $result2->fetchAll();
 ?>
