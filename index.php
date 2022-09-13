@@ -7,9 +7,7 @@ $sql = 'SELECT * FROM DATOS1 ORDER BY id DESC LIMIT 1 ';
 $result = $conn->query($sql);
 $rows = $result->fetchAll();
 
-$sql2 = 'SELECT DISTINCT device,id FROM DATOS1 GROUP BY device desc ';
-$result2 = $conn->query($sql2);
-$rows2 = $result2->fetchAll();
+$tabla = [1, 2, 3, 4, 5];
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,9 +43,9 @@ $rows2 = $result2->fetchAll();
 									<option value="0">Seleccione:</option>
 									<select name="device" id="device">
 										<?php
-										foreach ($rows2 as $row2) {
+										foreach ($tabla as $tabs) {
 										?>
-											<option value="<?php echo $row2['id']; ?>"> DISPOSITIVO <?php echo $row2['device']; ?></option>;
+											<option value="<?php echo $tabs; ?>"> DISPOSITIVO <?php echo $tabs; ?></option>;
 
 										<?php } ?>
 									</select>
