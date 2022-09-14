@@ -40,7 +40,7 @@ $tabla = [1, 2, 3, 4, 5];
 									<button id="BTNTEM" type="button" class="btn btn-secondary active"> TEMPERATURA</button>
 									<button id="BTNCPU" type="button" class="btn btn-secondary active"> TEM CPU</button>
 									<button id="BTNTODO" type="button" class="btn btn-secondary active"> TODO</button>
-									<option value="0">Seleccione:</option>
+									<!-- <option value="0">Seleccione:</option>
 									<select name="device" id="device">
 										<?php
 										foreach ($tabla as $tabs) {
@@ -49,7 +49,7 @@ $tabla = [1, 2, 3, 4, 5];
 
 										<?php } ?>
 									</select>
-									<button id="BTNDEVICE" type="button" class="btn btn-success active"> SEND</button>
+									<button id="BTNDEVICE" type="button" class="btn btn-success active"> SEND</button> -->
 
 								</div>
 							</div>
@@ -112,7 +112,7 @@ $tabla = [1, 2, 3, 4, 5];
 
 	setInterval(function() {
 		
-		console.log($('#cargaco2').is(':empty'));
+		// console.log($('#cargaco2').is(':empty'));
 		if ($('#cargaco2').is(':empty') == false) {
 			$('#cargaco2').load('co2.php');
 			console.log('Se cargo el grafico de CO2');

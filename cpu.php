@@ -5,7 +5,7 @@ $result;
 $device;
 
 //agregar numero siguiente cada que se agregre una nueva tabla o dispositivo
-$tablas = [1,2,3,4,5];
+$tablas = [1, 2, 3, 4, 5];
 
 // crear variabes y un array para utilizar mas adelante
 $dir = array();
@@ -15,7 +15,7 @@ $cont = 0;
 foreach ($tablas as $tab) {
 
     // var_dump($tab);
-    $sql = 'SELECT * FROM DATOS'.$tab;
+    $sql = 'SELECT * FROM DATOS' . $tab;
     $result = $conn->query($sql);
     $rows = $result->fetchAll();
 
@@ -23,7 +23,7 @@ foreach ($tablas as $tab) {
     // // recorre todos los datos buscando por dispositivo
     foreach ($rows as $row) {
         // selecciona la temperatura del ultimo registro de ciertos dispositivos
-        $sql2 = 'SELECT DEVICE,id,TEMP_CPU FROM DATOS'.$tab;
+        $sql2 = 'SELECT DEVICE,id,TEMP_CPU FROM DATOS' . $tab;
         $sql3 = $sql2 . ' ORDER BY FECHA DESC LIMIT 1';
         $result2 = $conn->query($sql3);
         $rows2 = $result2->fetchAll();
@@ -58,7 +58,15 @@ foreach ($tablas as $tab) {
                     ?>
                         <!-- <td><?php echo $v['id']; ?></td> -->
                         <td><?php echo $v['DEVICE']; ?></td>
-                        <td><?php echo $v['TEMP_CPU']; ?></td>
+                        <?php
+                        $t = $v['TEMP_CPU'];
+                        if ($t < 0) {
+                            $t = "°F";
+                        } else {
+                            $t = "°C";
+                        }
+                        ?>
+                        <td><?php echo $v['TEMP_CPU']; ?> <?php echo $t; ?></td>
                     <?php
                     }
                     ?>
