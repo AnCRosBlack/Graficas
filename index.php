@@ -3,11 +3,13 @@ require_once "php/conexion.php";
 $result;
 $device;
 
-$sql = 'SELECT * FROM DATOS1 ORDER BY id DESC LIMIT 1 ';
-$result = $conn->query($sql);
-$rows = $result->fetchAll();
+// $estacion = "-01";
 
-$tabla = [1, 2, 3, 4, 5];
+// $sql = 'SELECT * FROM ESTACION_01 ORDER BY id DESC LIMIT 1 ';
+// $result = $conn->query($sql);
+// $rows = $result->fetchAll();
+
+$tabla = [01, 02, 03];
 ?>
 <!DOCTYPE html>
 <html>

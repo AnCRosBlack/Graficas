@@ -29,8 +29,8 @@ foreach ($tablas as $tab) {
         $rows2 = $result2->fetchAll();
         // var_dump($rows2);
     }
-    // // var_dump($rows2);
-    // // guardar la temperatura de la ultima temperatura del dispositivo
+    // var_dump($rows2);
+    // guardar la temperatura de la ultima temperatura del dispositivo
     $dir[$cont] = $rows2;
     $cont++;
 }
